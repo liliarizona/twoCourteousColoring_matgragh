@@ -1,0 +1,24 @@
+function [set k]=twoCourteousColoring(A)
+%set graph g from Matrix A
+graph_init;
+g=graph;
+set_matrix(g,A);
+
+%set link
+numNode=nv(g);
+elistG=[];
+for i=1:1:numNode
+    elistV=g(i);
+    ni=length(elistV);
+    for j=1:1:ni
+        if elistV(j)>i
+            elistG=[elistG; [i elistV(j)]]
+        end
+    end
+end
+numW=length(elistG);
+wVector=zeros(1,numW);
+
+
+
+free(g);
